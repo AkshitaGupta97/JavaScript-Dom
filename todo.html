@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <link rel="stylesheet" href="todoStyle.css">
+</head>
+<body>
+    <h1>Todo Work</h1>
+    <hr>
+    <div class="todo-container">
+        <input type="text" id="todoInput">
+        <button id="addButton">Add Todo</button>
+        <!--  <div class="todoList"></div> as we create own attribute using js-->
+       <div class="todoList"></div>
+
+    </div>
+
+    <Script>
+        let todoInput = document.getElementById('todoInput');
+        let addTodo = document.getElementById('addButton');
+        //let todoEle = document.querySelector('.todoList'); // here we can also create element using js
+        let todoEle = document.querySelector('.todoList'); // selecting the todoList div where we will append our todos
+        
+
+        const addTodoList = () => {
+           // todoEle.textContent = todoInput.value;
+            let Ptodo = document.createElement('p'); // create a new div element
+            Ptodo.textContent = todoInput.value; // set the text content of the new element by todo value
+            console.log(Ptodo);
+            todoEle.append(Ptodo); // append the new element to the todoList div
+
+            todoInput.value = ''; // clear the input field after adding the todo
+            
+            Ptodo.addEventListener('click', () => {
+                Ptodo.style.cursor = 'pointer'; // change the cursor to pointer when hovering over the todo
+                Ptodo.style.color = 'orange'; // change the color of the todo when clicked
+                Ptodo.style.textDecoration = 'line-through'; // strike through the todo when clicked
+            });
+
+
+
+        }
+
+        addTodo.addEventListener('click', () => {
+            addTodoList();
+        })
+
+        /*todoEle.addEventListener('click', (event) => {
+            console.log(event.target); // log the clicked element
+            let currEle = event.target;
+            currEle.remove();
+            
+           // todoEle.remove(); // remove the todoList div when clicked
+        })*/
+    </Script>
+</body>
+</html>

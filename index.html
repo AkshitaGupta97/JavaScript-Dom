@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Basics of dom -->
+    <h1>Java Script Basics</h1>
+    <hr>
+    <h2 id="dom">Understanding the DOM</h2>
+    <hr>
+    <hr>
+    <p>Understanding the DOM tree Structure</p>
+    <p>It's easy as Java Script helps to connect HTML</p>
+    <p>Java Script is a programming language that allows you to manipulate the DOM</p>
+    <p>DOM stands for Document Object Model</p>
+    <p>It represents the structure of a document as a tree of objects</p>
+    <ul class="list">
+        <li>DOM</li>
+        <li>Document</li>
+        <li>Object</li>
+        <li>Model</li>
+        <li>Java Script</li>
+        <li>HTML</li>
+        <li>CSS</li>
+    </ul>
+    <div class="input-container">
+        <input type="text" placeholder="Enter your name" id="nameInput">
+        <button id="submitButton">Submit</button>
+    </div>
+
+    <Script>
+        let parent = document;
+        let bodyEle = document.body;
+        let headEle = document.head;
+        /*
+            console.log(parent);
+            console.log(bodyEle);
+            console.log(headEle);
+        */
+        let bodyChild = bodyEle.childNodes;
+        let bodyChildren = bodyEle.children;
+        /* console.log(bodyChild);
+        console.log(bodyChildren);
+        */
+        let firstElementChild = bodyEle.firstElementChild;
+        console.log(firstElementChild);       /*it will give h1 as it is element*/
+        let firstChild = bodyEle.firstChild;  /* it will give the text because after body ther is enter*/
+        let lastChild = bodyEle.lastChild;
+        /*console.log(firstChild);
+        console.log(lastChild);
+        */
+        
+        let nextSibling = firstElementChild.nextElementSibling; /* it will give the next element sibling */
+        let previousSibling = firstElementChild.previousElementSibling; /* it will give the previous element sibling */
+        console.log(nextSibling);
+        console.log(previousSibling);
+
+        let parentNode = firstElementChild.parentNode; /* it will give the parent node */
+
+        let findElebyId = document.getElementById("submitButton"); /* it will give the element by id */
+        console.log(findElebyId.innerHTML); /* it will give the inner HTML of the element */
+        
+        let findElebyClass = document.getElementsByClassName("list"); /* it will give the element by class */
+        console.log(findElebyClass[0].innerHTML); /* it will give the inner HTML as structure of html */
+        console.log(findElebyClass[0].innerText); /* it will give the inner text  */
+        console.log(findElebyClass[0].textContent); /* it will give the text content with css */
+
+        console.log(...findElebyClass); /* it will give the all elements in the class with ul */
+        for(let ele of findElebyClass){
+            console.log(ele.innerText); 
+            console.log(ele.textContent);
+            console.log(ele.innerHTML); 
+        }
+
+        const firstElebyQuery  = document.querySelector("#dom"); 
+        console.log(firstElebyQuery.innerHTML = "JavaScript DOM"); 
+    </Script>
+</body>
+</html>
