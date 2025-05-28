@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: rgb(32, 32, 32);
+        }
+        .main {
+            text-align: center;
+            margin-top: 4rem;
+        }
+        #myText {
+            border-radius: 5px;
+            padding: 0.8rem;
+        }
+        .output {
+            border-radius: 1rem;
+            border-left: 4px solid pink;
+            color: rgb(239, 209, 116);
+            margin-top: 2rem;
+            margin-left: 9rem;
+            text-align: left;
+            padding: 0.1rem 1rem;
+            max-width: 300px;
+            background-color: rgb(100, 98, 98);
+        }
+    </style>
+</head>
+<body>   
+    <div class="main">
+        <input type="text" name=" User name" id="myText" placeholder="Type Here ...">
+        <div class="output">
+            <p class="inputValue">Input Value : </p>
+            <p class="inputName">Input name : </p>
+            <p class="inputType"> Input type : </p>
+            <p class="eventType">Event Type : </p>
+        </div>
+    </div>
+
+    <script>
+        const inputEle = document.getElementById("myText");
+        const handleInput = (event) => {
+            console.log(event);
+            document.querySelector(".inputValue").textContent = `Input Value : ${event.target.value}`;
+            document.querySelector(".inputName").textContent = `Input Name : ${event.target.name}`;
+            document.querySelector(".inputType").textContent = `Input type : ${event.inputType}`;
+            document.querySelector(".eventType").textContent = `Event type : ${event.type}`;
+        }
+
+        inputEle.addEventListener("input", handleInput);
+        //inputEle.addEventListener("change", handleInput); // this will act when we  move outward of of text
+        
+    </script>
+</body>
+</html>

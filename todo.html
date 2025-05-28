@@ -16,6 +16,7 @@
        <div class="todoList"></div>
 
     </div>
+    <button onclick="alert('Welcome')">Click Me!</button>
 
     <Script>
         let todoInput = document.getElementById('todoInput');
@@ -38,9 +39,6 @@
                 Ptodo.style.color = 'orange'; // change the color of the todo when clicked
                 Ptodo.style.textDecoration = 'line-through'; // strike through the todo when clicked
             });
-
-
-
         }
 
         addTodo.addEventListener('click', () => {

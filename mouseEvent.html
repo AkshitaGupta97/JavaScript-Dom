@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        body {
+            background-color: rgb(70, 69, 69);
+        }
+        section {
+            position: absolute;
+            top: 30%;
+            left: 40%;
+        }
+        .rectangle {
+            margin-bottom: 3rem;
+            width: 8rem;
+            height: 8rem;
+            background-color: rgb(17, 16, 16);
+            box-shadow: 4px 2px 4px 5px gray;
+        }
+        #Button {
+            margin-left: 1rem;
+            padding: 1rem;
+            background-color: green;
+            color: white;
+            font-size: large;
+            border-radius: 2rem;
+            border: 1px solid transparent;
+        }
+        .addTransition {
+            border-radius: 50%;
+            background-color: yellow;
+        }
+        .addTransition3 {
+            border-radius: 50%;
+            background-color: yellow;
+            translate: -30rem 0;
+        }
+        .addTransition4 {
+            border-radius: 50%;
+            background-color: yellow;
+            translate: 30rem 0;
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+        <div class="rectangle"></div>
+        <button id="Button">Click Me!</button>
+    </section>
+
+    <script>
+        let myBtn  = document.getElementById('Button');
+        let rect =  document.querySelector(".rectangle");
+
+        const handleMouseEvent1 = () => {
+            console.log("Click")
+            rect.style.backgroundColor = "yellow";
+        }
+
+        const handleMouseEvent2 = () => {
+            rect.classList.add("addTrandition");
+        }
+
+        const handleMouseEvent3 = () => {
+            rect.classList.add('addTransition3')
+        }
+
+        const handleMouseEvent4 = () => {
+            rect.classList.add('addTransition4')
+        }
+
+
+        myBtn.addEventListener("click", () => {
+            handleMouseEvent1;
+        });
+
+        myBtn.addEventListener("dblclick", handleMouseEvent2);
+        myBtn.addEventListener("mouseover", handleMouseEvent3);
+        myBtn.addEventListener("mouseout", handleMouseEvent4);
+        /*
+            myBtn.addEventListener("mousedown", handleMouseEvent5);
+            myBtn.addEventListener("mouseup", handleMouseEvent6);
+        */
+    </script>
+</body>
+</html>
