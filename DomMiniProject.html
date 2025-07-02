@@ -33,10 +33,14 @@
 <body>
     <div class="YouTube">
         <p>1. YouTube Subscribe Button</p>
-       <!--     Inline js   -->
-        <button onclick="
+       
+        <button class="YouTube-btn">Subscribe</button>
+    </div>
+
+    <script>
+        function subscribe() {
             const btn = document.querySelector('.YouTube-btn');
-            if(btn.innerHTML === 'Subscribe'){
+            if(btn.innerText === 'Subscribe'){
                 btn.innerHTML = 'Subscribed';
                 btn.style.backgroundColor = '#ff0000';
                 btn.style.color = 'white';
@@ -46,7 +50,8 @@
                 btn.style.backgroundColor = 'white';
                 btn.style.color = '#ff0000';
             }
-        " class="YouTube-btn">Subscribe</button>
-    </div>
+        }
+        document.querySelector('.YouTube-btn').addEventListener('click', subscribe);
+    </script>
 </body>
 </html>
