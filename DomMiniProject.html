@@ -12,7 +12,7 @@
             font-family: Arial, sans-serif;
             text-align: center;
         }
-        .YouTube{
+        .container{
             background-color: #282828;
             padding: 20px;
             border-radius: 10px;
@@ -28,16 +28,41 @@
             width: 10rem;
             border-radius: 25px;
         }
+        .orderInput {
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+        .calculate {
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            background-color: #ff9900;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-    <div class="YouTube">
+    <div class="container">
         <p>1. YouTube Subscribe Button</p>
        
         <button class="YouTube-btn">Subscribe</button>
     </div>
 
+    <div class="container">
+        <p>Amazon Shipping Calculator</p>
+        <input type="text" placeholder="Cost of order" class="orderInput">
+
+        <button class="calculate">Calculate</button>
+        <p class="totalCost"></p>
+    </div>
+
     <script>
+
+
         function subscribe() {
             const btn = document.querySelector('.YouTube-btn');
             if(btn.innerText === 'Subscribe'){
@@ -52,6 +77,25 @@
             }
         }
         document.querySelector('.YouTube-btn').addEventListener('click', subscribe);
+
+        function calculatePrice(){
+            const inputElement = document.querySelector('.orderInput');
+            let cost = Number(inputElement.value);
+            if(cost < 40){
+                cost = cost + 10;
+            }
+
+            document.querySelector('.totalCost').innerHTML = `Amount is : $ ${cost}`;
+        }
+
+        document.querySelector('.calculate').addEventListener('click', calculatePrice);
+
+        // let say by hitting to enter key i want same output as calculate button
+        document.querySelector('.orderInput').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                calculatePrice();
+            }
+        });
     </script>
 </body>
 </html>
