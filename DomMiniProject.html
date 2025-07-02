@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Projects</title>
+
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .YouTube{
+            background-color: #282828;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            margin: 50px auto;
+        }
+        .YouTube-btn {
+            border: none;
+            font-weight: bold;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: 2px solid #ff0000;
+            width: 10rem;
+            border-radius: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="YouTube">
+        <p>1. YouTube Subscribe Button</p>
+       <!--     Inline js   -->
+        <button onclick="
+            const btn = document.querySelector('.YouTube-btn');
+            if(btn.innerHTML === 'Subscribe'){
+                btn.innerHTML = 'Subscribed';
+                btn.style.backgroundColor = '#ff0000';
+                btn.style.color = 'white';
+            }
+            else{
+                btn.innerHTML = 'Subscribe';
+                btn.style.backgroundColor = 'white';
+                btn.style.color = '#ff0000';
+            }
+        " class="YouTube-btn">Subscribe</button>
+    </div>
+</body>
+</html>
